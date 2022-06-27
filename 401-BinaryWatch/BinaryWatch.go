@@ -1,8 +1,8 @@
-package bitswatch
+package main
 
 import (
 	f "fmt"
-	"math/bits"
+	b "math/bits"
 	r "math/rand"
 	t "time"
 )
@@ -18,7 +18,7 @@ func readBinaryWatch(turnedOn int) []string {
 	var ans []string
 	for h := uint8(0); h < 12; h++ {
 		for m := uint8(0); m < 60; m++ {
-			if bits.OnesCount8(h)+bits.OnesCount8(m) == turnedOn {
+			if b.OnesCount8(h)+b.OnesCount8(m) == turnedOn {
 				ans = append(ans, f.Sprintf("%d:%02d", h, m))
 
 			}
